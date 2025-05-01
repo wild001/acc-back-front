@@ -25,6 +25,7 @@ import Header from '../components/navHeader.vue'
     height: 100%;
     .el-container{
         height: 100%;
+
     }
 }
 </style>

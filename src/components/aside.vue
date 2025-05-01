@@ -1,6 +1,6 @@
 <template>
   <el-menu
-        :style="{width: '230px'}"
+        :style="{width: !store.isCollapse ? '230px' : '64px'}"
         active-text-color="#000fff"
         background-color="#c6e2ff"
         class="aside-container"
@@ -11,7 +11,7 @@
         :collapse="store.isCollapse"
       >
       <p class="logo-lg">
-        CC陪诊
+        {{ store.isCollapse ? 'CC' : 'CC陪诊' }}
       </p>
 
       <!-- 支部 -->
@@ -45,6 +45,8 @@ const handleClose = () =>{
 <style scoped lang="less">
 .aside-container{
     height: 100%;
+    transition: width 0.1s linear;
+
     .logo-lg{
         font-size: 22px;
         text-align: center;
